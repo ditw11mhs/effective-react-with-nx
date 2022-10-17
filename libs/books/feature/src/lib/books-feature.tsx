@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getBooks } from '@acme/books/data-access';
 import { Books } from '@acme/books/ui';
+import { IBook } from '@acme/shared-models';
 
 export const BooksFeature = () => {
-  const [books, setBooks] = useState<any[]>([]);
+  const [books, setBooks] = useState<IBook[]>([]);
   useEffect(
     () => {
       getBooks().then(setBooks);
